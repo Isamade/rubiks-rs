@@ -14,6 +14,7 @@ async fn main() {
 
     let app = Router::new()
         .route("/", get(rotation::hello_world));
+        .route("/rotate", post(rotation::rotate_cube))
         .layer(cors);
 
     let addr = SocketAddr::from(([127, 0, 0, 1], 3000));
